@@ -9,5 +9,6 @@ import java.util.ArrayList;
  */
 abstract public class ParkingPass
 {
+    // list of lots a parking pass can park in
     ArrayList<ParkingLot> lots;
 }

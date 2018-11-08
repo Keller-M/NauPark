@@ -19,6 +19,47 @@ public class ParkingLotFactory
     ParkingLot createParkingLot( String type )
     {
         ParkingLot returnLot = null;
+
+        if( type.equals( "P52") )
+        {
+            returnLot = null;
+        }
+        else if( type.equals( "P54" ) )
+        {
+            returnLot = null;
+        }
+        else if( type.equals( "P50" ))
+        {
+            returnLot = null;
+        }
+        else if( type.equals( "P53" ) )
+        {
+            returnLot = null;
+        }
+        else if( type.equals( "P51" ) )
+        {
+            returnLot = null;
+        }
+        else if( type.equals( "P62A" ) )
+        {
+            returnLot = null;
+        }
+        else if( type.equals( "P62B" ) )
+        {
+            returnLot = null;
+        }
+         else if( type.equals( "P47" ) )
+        {
+            returnLot = null;
+        }
+         else if( type.equals( "P51" ) )
+        {
+            returnLot = null;
+        }
+
+
+
+
         return returnLot;
     }
 }
