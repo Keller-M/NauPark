@@ -8,5 +8,17 @@ package com.code.monkey.naupark;
  */
 abstract public class ParkingLot
 {
+    enum ParkingMode
+    {
+        NO_PERMIT_REQUIRED,
+        EMPLOYEE_ONLY,
+        ONLY_ON_WEEKDAYS, // some lots are open Saturday and Sunday
+        NOT_ON_WEEKEND, // not all lots are open Saturday and Sunday
+        ALWAYS, // lot does not require a permit
+        PAY_TO_PARK
+    }
 
+    // Employee, north commuter, etc...
+    String type;
+    ParkingMode mode;
 }
