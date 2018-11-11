@@ -56,10 +56,46 @@ public class ParkingLotFactory
         {
             returnLot = null;
         }
-
-
-
-
+        else if( type.equals( "P62A" ) )
+        {
+            returnLot = null;
+        }
+        else if( type.equals( "P62B" ) )
+        {
+            returnLot = null;
+        }
+        else if( type.equals( "P47" ) )
+        {
+            returnLot = null;
+        }
+        else if( type.equals( "P51" ) )
+        {
+            returnLot = null;
+        }
+        else if( type.equals( "P46" ) )
+        {
+            returnLot = null;
+        }
+        else if( type.equals( "P45" ) )
+        {
+            returnLot = null;
+        }
+        else if( type.equals( "P44" ) )
+        {
+            returnLot = null;
+        }
+         else if( type.equals( "P63" ) )
+        {
+            returnLot = null;
+        }
+         else if( type.equals( "P66A" ) )
+        {
+            returnLot = null;
+        }
+        else if( type.equals( "P66" ) )
+        {
+            returnLot = null;
+        }
         return returnLot;
     }
 }
