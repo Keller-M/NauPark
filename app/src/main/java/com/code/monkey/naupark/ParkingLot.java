@@ -10,7 +10,7 @@ import java.util.ArrayList;
  */
 abstract public class ParkingLot
 {
-    enum ParkingMode
+    static enum ParkingMode
     {
         NO_PERMIT_REQUIRED,
         EMPLOYEE_ONLY,
@@ -22,8 +22,15 @@ abstract public class ParkingLot
     }
 
     // Employee, north commuter, etc...
-    String type;
+    String name;
     ArrayList<ParkingMode> mode;
 
-
+    /**
+     * Initialize a ParkingLot with Mode(s), and a name
+     **/
+    public ParkingLot( ArrayList<ParkingMode> mode, String name )
+    {
+        this.mode = mode;
+        this.name = name;
+    }
 }
