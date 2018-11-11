@@ -1,8 +1,10 @@
 package com.code.monkey.naupark;
 
+import java.util.ArrayList;
+
 /**
  * Encapsulates information needed to define a ParkingLot.
- * A parking lot has informatino about what times it becomes freely
+ * A parking lot has information about what times it becomes freely
  * available.
  * e.g. after 4:30PM on weekdays, or at any time during the weekends.
  */
@@ -12,6 +14,7 @@ abstract public class ParkingLot
     {
         NO_PERMIT_REQUIRED,
         EMPLOYEE_ONLY,
+		AFTERNOON_ON_WEEKDAYS,
         ONLY_ON_WEEKDAYS, // some lots are open Saturday and Sunday
         NOT_ON_WEEKEND, // not all lots are open Saturday and Sunday
         ALWAYS, // lot does not require a permit
@@ -20,5 +23,7 @@ abstract public class ParkingLot
 
     // Employee, north commuter, etc...
     String type;
-    ParkingMode mode;
+    ArrayList<ParkingMode> mode;
+
+
 }
