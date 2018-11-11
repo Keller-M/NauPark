@@ -13,6 +13,7 @@ abstract public class ParkingLot
     static enum ParkingMode
     {
         NO_PERMIT_REQUIRED,
+        RESIDENT_ONLY,
         EMPLOYEE_ONLY,
 		AFTERNOON_ON_WEEKDAYS,
         ONLY_ON_WEEKDAYS, // some lots are open Saturday and Sunday
