@@ -96,6 +96,146 @@ public class ParkingLotFactory
         {
             returnLot = null;
         }
+        else if( type.equals( "P41" ) )
+        {
+            returnLot = null;
+        }
+        else if( type.equals( "P68" ) )
+        {
+            returnLot = null;
+        }
+        else if( type.equals( "P42" ) )
+        {
+            returnLot = null;
+        }
+        else if( type.equals( "P60" ) )
+        {
+            returnLot = null;
+        }
+        else if( type.equals( "P96G" ) )
+        {
+            returnLot = null;
+        }
+        else if( type.equals( "P32B" ) )
+        {
+            returnLot = null;
+        }
+        else if( type.equals( "P32A" ) )
+        {
+            returnLot = null;
+        }
+        else if( type.equals( "P32" ) )
+        {
+            returnLot = null;
+        }
+        else if( type.equals( "P32C" ) )
+        {
+            returnLot = null;
+        }
+        else if( type.equals( "P33" ) )
+        {
+            returnLot = null;
+        }
+        else if( type.equals( "P38" ) )
+        {
+            returnLot = null;
+        }
+        else if( type.equals( "P96G" ) )
+        {
+            returnLot = null;
+        }
+        else if( type.equals( "P31" ) )
+        {
+            returnLot = null;
+        }
+        else if( type.equals( "P29" ) )
+        {
+            returnLot = null;
+        }
+        else if( type.equals( "P96A" ) )
+        {
+            returnLot = null;
+        }
+        else if( type.equals( "P96B" ) )
+        {
+            returnLot = null;
+        }
+        else if( type.equals( "P16A" ) )
+        {
+            returnLot = null;
+        }
+        else if( type.equals( "P13" ) )
+        {
+            returnLot = null;
+        }
+        else if( type.equals( "P16" ) )
+        {
+            returnLot = null;
+        }
+        else if( type.equals( "P11" ) )
+        {
+            returnLot = null;
+        }
+        else if( type.equals( "P12" ) )
+        {
+            returnLot = null;
+        }
+        else if( type.equals( "P6" ) )
+        {
+            returnLot = null;
+        }
+        else if( type.equals( "P7A" ) )
+        {
+            returnLot = null;
+        }
+        else if( type.equals( "P96C" ) )
+        {
+            returnLot = null;
+        }
+        else if( type.equals( "P28D" ) )
+        {
+            returnLot = null;
+        }
+        else if( type.equals( "P13A" ) )
+        {
+            returnLot = null;
+        }
+        else if( type.equals( "P9" ) )
+        {
+            returnLot = null;
+        }
+        else if( type.equals( "P10" ) )
+        {
+            returnLot = null;
+        }
+        else if( type.equals( "P5" ) )
+        {
+            returnLot = null;
+        }
+        else if( type.equals( "P3" ) )
+        {
+            returnLot = null;
+        }
+        else if( type.equals( "P3B" ) )
+        {
+            returnLot = null;
+        }
+        else if( type.equals( "P3A" ) )
+        {
+            returnLot = null;
+        } 
+        else if( type.equals( "P2" ) )
+        {
+            returnLot = null;
+        } 
+        else if( type.equals( "P1B" ) )
+        {
+            returnLot = null;
+        } 
+        else if( type.equals( "P1A" ) )
+        {
+            returnLot = null;
+        } 
         return returnLot;
     }
 }
