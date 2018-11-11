@@ -33,4 +33,18 @@ abstract public class ParkingLot
         this.mode = mode;
         this.name = name;
     }
+
+    /**
+     * Add a new parking mode to a parking lot
+     * @param newMode new mode to add to the lot
+     *                if the lot already contains this mdoe,
+     *                it will not be added again
+     */
+    public void addMode( ParkingMode newMode )
+    {
+        if( !mode.contains( newMode ) )
+        {
+            mode.add( newMode );
+        }
+    }
 }
