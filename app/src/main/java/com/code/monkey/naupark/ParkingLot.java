@@ -10,7 +10,7 @@ import java.util.ArrayList;
  */
 abstract public class ParkingLot
 {
-    static enum ParkingMode
+    enum ParkingMode
     {
         NO_PERMIT_REQUIRED,
         RESIDENT_ONLY,
