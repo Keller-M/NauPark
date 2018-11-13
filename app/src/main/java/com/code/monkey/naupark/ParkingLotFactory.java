@@ -42,13 +42,38 @@ public class ParkingLotFactory
         {
             returnLot = null;
         }
+        else if( type.equals( "P62" ) )
+        {
+             returnLot = new P62ParkingLot( new ArrayList<ParkingLot.ParkingMode>(),
+                    "P62"
+            );
+
+            returnLot.addMode( ParkingLot.ParkingMode.ONLY_ON_WEEKDAYS );
+            returnLot.addMode( ParkingLot.ParkingMode.AFTERNOON_ON_WEEKDAYS );
+            returnLot.addMode( ParkingLot.ParkingMode.NOT_ON_WEEKEND );
+            returnLot.addMode( ParkingLot.ParkingMode.PAY_TO_PARK );
+        }
         else if( type.equals( "P62A" ) )
         {
-            returnLot = null;
+            returnLot = new P62AParkingLot( new ArrayList<ParkingLot.ParkingMode>(),
+                    "P62A"
+            );
+
+            returnLot.addMode( ParkingLot.ParkingMode.ONLY_ON_WEEKDAYS );
+            returnLot.addMode( ParkingLot.ParkingMode.AFTERNOON_ON_WEEKDAYS );
+            returnLot.addMode( ParkingLot.ParkingMode.NOT_ON_WEEKEND );
+            returnLot.addMode( ParkingLot.ParkingMode.PAY_TO_PARK );
         }
         else if( type.equals( "P62B" ) )
         {
-            returnLot = null;
+            returnLot = new P62BParkingLot( new ArrayList<ParkingLot.ParkingMode>(),
+                    "P62B"
+            );
+
+            returnLot.addMode( ParkingLot.ParkingMode.ONLY_ON_WEEKDAYS );
+            returnLot.addMode( ParkingLot.ParkingMode.AFTERNOON_ON_WEEKDAYS );
+            returnLot.addMode( ParkingLot.ParkingMode.NOT_ON_WEEKEND );
+            returnLot.addMode( ParkingLot.ParkingMode.PAY_TO_PARK );
         }
          else if( type.equals( "P47" ) )
         {
@@ -61,14 +86,6 @@ public class ParkingLotFactory
 
         }
          else if( type.equals( "P51" ) )
-        {
-            returnLot = null;
-        }
-        else if( type.equals( "P62A" ) )
-        {
-            returnLot = null;
-        }
-        else if( type.equals( "P62B" ) )
         {
             returnLot = null;
         }
