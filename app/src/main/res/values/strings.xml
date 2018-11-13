@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">NauPark</string>
+    <string name="contentDescription">Map of the NAU campus and its parking spots</string>
+    <string name="zone1_button">Zone 1</string>
+    <string name="zone2_button">Zone 2</string>
+    <string name="zone3_button">Zone 3</string>
+    <string name="zone4_button">Zone 4</string>
+    <string name="zone5_button">Zone 5</string>
+    <string name="zone6_button">Zone 6</string>
 </resources>
