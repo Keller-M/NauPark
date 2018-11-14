@@ -49,7 +49,7 @@ abstract public class ParkingLot
      */
     public ParkingLot()
     {
-        this.mode = new ArrayList<ParkingMode>;
+        this.mode = new ArrayList<ParkingMode>();
         this.name = null;
     }
 
