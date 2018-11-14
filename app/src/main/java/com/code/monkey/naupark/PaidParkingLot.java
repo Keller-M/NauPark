@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class PaidParkingLot extends ParkingLot
 {
-        public PaidParkingLot(ArrayList<ParkingMode> modes, String name )
+    public PaidParkingLot(ArrayList<ParkingMode> modes, String name )
     {
         super( modes, name );
     }
