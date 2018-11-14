@@ -24,15 +24,15 @@ public class ParkingLotFactory
 
         if( type.equals( "P52") )
         {
-            returnLot = null;
+            returnLot = new ResidentParkingLot( type, null );
         }
         else if( type.equals( "P54" ) )
         {
-            returnLot = null;
+            returnLot = new ResidentParkingLot( type, null );
         }
         else if( type.equals( "P50" ))
         {
-            returnLot = null;
+            returnLot = new ResidentParkingLot( type, null );
         }
         else if( type.equals( "P53" ) )
         {
@@ -40,7 +40,7 @@ public class ParkingLotFactory
         }
         else if( type.equals( "P51" ) )
         {
-            returnLot = null;
+            returnLot = new ResidentParkingLot( type, null );
         }
         else if( type.equals( "P62" ) )
         {
@@ -48,7 +48,7 @@ public class ParkingLotFactory
         }
         else if( type.equals( "P62A" ) )
         {
-
+            returnLot = new PaidParkingLot( type, null );
         }
         else if( type.equals( "P62B" ) )
         {
@@ -57,18 +57,6 @@ public class ParkingLotFactory
          else if( type.equals( "P47" ) )
         {
             returnLot = new EmployeeParkingLot( type, null );
-        }
-         else if( type.equals( "P51" ) )
-        {
-            returnLot = null;
-        }
-        else if( type.equals( "P47" ) )
-        {
-            returnLot = null;
-        }
-        else if( type.equals( "P51" ) )
-        {
-            returnLot = null;
         }
         else if( type.equals( "P46" ) )
         {
@@ -92,27 +80,31 @@ public class ParkingLotFactory
         }
         else if( type.equals( "P44" ) )
         {
-            returnLot = null;
+            returnLot = new ResidentParkingLot( type, null );
         }
          else if( type.equals( "P63" ) )
         {
-            returnLot = null;
+            returnLot = new ResidentParkingLot( type, null );
         }
          else if( type.equals( "P66A" ) )
         {
-            returnLot = null;
+            returnLot = new ResidentParkingLot( type, null );
         }
         else if( type.equals( "P66" ) )
         {
-            returnLot = null;
+            returnLot = new ResidentParkingLot( type, null );
         }
         else if( type.equals( "P41" ) )
         {
-            returnLot = null;
+            returnLot = new ResidentParkingLot( type, null );
+        }
+        else if( type.equals( "P40" ) )
+        {
+            returnLot = new ResidentParkingLot( type, null );
         }
         else if( type.equals( "P68" ) )
         {
-            returnLot = null;
+            returnLot = new ResidentParkingLot( type, null );
         }
         else if( type.equals( "P42" ) )
         {
@@ -126,31 +118,32 @@ public class ParkingLotFactory
         {
             returnLot = new EmployeeParkingLot( type, null );
         }
-        else if( type.equals( "P96G" ) )
-        {
-            returnLot = new P96GParkingLot( new ArrayList<ParkingLot.ParkingMode>(),
-                    "P96G");
-            returnLot.addMode( ParkingLot.ParkingMode.RESIDENT_ONLY );        }
-
+        else if( type.equals( "P96G" ) ) {
+            returnLot = new ResidentParkingLot(type, null);
+        }
         else if( type.equals( "P32B" ) )
         {
-            returnLot = null;
+            returnLot = new ResidentParkingLot( type, null );
         }
         else if( type.equals( "P32A" ) )
         {
-            returnLot = null;
+            returnLot = new ResidentParkingLot( type, null );
         }
         else if( type.equals( "P32" ) )
         {
-            returnLot = null;
+            returnLot = new ResidentParkingLot( type, null );
         }
         else if( type.equals( "P32C" ) )
         {
-            returnLot = null;
+            returnLot = new ResidentParkingLot( type, null );
         }
         else if( type.equals( "P33" ) )
         {
-            returnLot = null;
+            returnLot = new ResidentParkingLot( type, null );
+        }
+        else if( type.equals( "P33A" ) )
+        {
+            returnLot = new ResidentParkingLot( type, null );
         }
         else if( type.equals( "P39" ) )
         {
@@ -166,13 +159,11 @@ public class ParkingLotFactory
         }
         else if( type.equals( "P96G" ) )
         {
-            returnLot = null;
+            returnLot = new ResidentParkingLot( type, null );
         }
         else if( type.equals( "P31" ) )
         {
-            returnLot = new P96CParkingLot( new ArrayList<ParkingLot.ParkingMode>(),
-                    "P96C");
-            returnLot.addMode( ParkingLot.ParkingMode.RESIDENT_ONLY );
+            returnLot = new ResidentParkingLot( type, null );
         }
         else if( type.equals( "P29" ) )
         {
@@ -188,11 +179,11 @@ public class ParkingLotFactory
         }
         else if( type.equals( "P16A" ) )
         {
-            returnLot = new EmployeeParkingLot( type, null );
+            returnLot = new ResidentParkingLot( type, null );
         }
         else if( type.equals( "P13" ) )
         {
-            returnLot = null;
+            returnLot = new PaidParkingLot( type, null );
         }
         else if( type.equals( "P16" ) )
         {
@@ -216,13 +207,11 @@ public class ParkingLotFactory
         }
         else if( type.equals( "P96C" ) )
         {
-            returnLot = new P96CParkingLot( new ArrayList<ParkingLot.ParkingMode>(),
-                    "P96C");
-            returnLot.addMode( ParkingLot.ParkingMode.RESIDENT_ONLY );
+            returnLot = new ResidentParkingLot( type, null );
         }
         else if( type.equals( "P28D" ) )
         {
-            returnLot = null;
+            returnLot = new ResidentParkingLot( type, null );
         }
         else if( type.equals( "P13D ") )
         {
@@ -234,7 +223,7 @@ public class ParkingLotFactory
         }
         else if( type.equals( "P9" ) )
         {
-            returnLot = null;
+            returnLot = new EmployeeParkingLot( type, null );
         }
         else if( type.equals( "P10" ) )
         {
@@ -242,9 +231,7 @@ public class ParkingLotFactory
         }
         else if( type.equals( "P5" ) )
         {
-            returnLot = new P96CParkingLot( new ArrayList<ParkingLot.ParkingMode>(),
-                    "P96C");
-            returnLot.addMode( ParkingLot.ParkingMode.RESIDENT_ONLY );
+            returnLot = new ResidentParkingLot( type, null );
         }
         else if( type.equals( "P3" ) )
         {
@@ -256,8 +243,8 @@ public class ParkingLotFactory
         }
         else if( type.equals( "P3A" ) )
         {
-            returnLot = null;
-        } 
+            returnLot = new EmployeeParkingLot( type, null );
+        }
         else if( type.equals( "P2" ) )
         {
             returnLot = new EmployeeParkingLot( type, null );
