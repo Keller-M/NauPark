@@ -36,6 +36,15 @@ abstract public class ParkingLot
     }
 
     /**
+     * Default constructor
+     */
+    public ParkingLot()
+    {
+        this.mode = null;
+        this.name = null;
+    }
+
+    /**
      * Add a new parking mode to a parking lot
      * @param newMode new mode to add to the lot
      *                if the lot already contains this mdoe,
