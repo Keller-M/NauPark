@@ -23,8 +23,9 @@ abstract public class ParkingLot
     }
 
     // Employee, north commuter, etc...
-    String name;
-    ArrayList<ParkingMode> mode;
+    private String name;
+    private ArrayList<ParkingMode> mode;
+    private String address;
 
     /**
      * Initialize a ParkingLot with Mode(s), and a name
@@ -35,12 +36,20 @@ abstract public class ParkingLot
         this.name = name;
     }
 
+    public ParkingLot(  ArrayList<ParkingMode> mode, String name, String address )
+    {
+        this.mode    = mode;
+        this.name    = name;
+        this.address = address;
+
+    }
+
     /**
      * Default constructor
      */
     public ParkingLot()
     {
-        this.mode = null;
+        this.mode = new ArrayList<ParkingMode>;
         this.name = null;
     }
 
@@ -57,4 +66,13 @@ abstract public class ParkingLot
             mode.add( newMode );
         }
     }
+        /**
+     * Sets the address of this parkinglot
+     * @param newAddress address to change to
+     */
+    public void setAddress( String newAddress )
+    {
+        address = newAddress;
+    }
+
 }
