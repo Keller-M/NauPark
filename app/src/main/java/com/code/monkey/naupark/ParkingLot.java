@@ -66,7 +66,7 @@ abstract public class ParkingLot
             mode.add( newMode );
         }
     }
-        /**
+    /**
      * Sets the address of this parkinglot
      * @param newAddress address to change to
      */
