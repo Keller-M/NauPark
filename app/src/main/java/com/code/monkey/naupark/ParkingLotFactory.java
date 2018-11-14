@@ -180,19 +180,11 @@ public class ParkingLotFactory
         }
         else if( type.equals( "P96A" ) )
         {
-            returnLot = new P96AParkingLot( new ArrayList<ParkingLot.ParkingMode>(),
-                    "P96A"
-            );
-
-            returnLot.addMode( ParkingLot.ParkingMode.PAY_TO_PARK );
+            returnLot = new PaidParkingLot( type, null );
         }
         else if( type.equals( "P96B" ) )
         {
-            returnLot = new P96BParkingLot( new ArrayList<ParkingLot.ParkingMode>(),
-                    "P96B"
-            );
-
-            returnLot.addMode( ParkingLot.ParkingMode.PAY_TO_PARK );
+            returnLot = new PaidParkingLot( type, null );
         }
         else if( type.equals( "P16A" ) )
         {
