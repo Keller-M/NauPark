@@ -16,6 +16,11 @@ public class EmployeeParkingLot extends ParkingLot
         addModes();
     }
 
+    public EmployeeParkingLot( String name, String address )
+    {
+        super( new ArrayList<ParkingMode>(), name, address );
+    }
+
     /**
      * Adds the default modes for EmployeeParkingLot
      */
