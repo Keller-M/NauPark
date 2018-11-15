@@ -4,102 +4,91 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/mainBackground"
     tools:context=".MainActivity">
 
 
-    <ScrollView
-        android:id="@+id/zone_btn_scrollView"
-        android:layout_width="120dp"
-        android:layout_height="match_parent"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+    <Spinner
+        android:id="@+id/zone1_spinner"
+        android:layout_width="0dp"
+        android:layout_height="67dp"
+        android:background="@color/colorZone1"
+        android:entries="@array/zone1_array"
+        android:popupBackground="@color/colorArray1"
+        android:text="@string/zone1_button"
+        app:layout_constraintBottom_toTopOf="@+id/zone2_spinner"
+        app:layout_constraintEnd_toStartOf="@+id/imageView"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_chainStyle="packed" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+    <Spinner
+        android:id="@+id/zone3_spinner"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        android:background="@color/colorZone3"
+        android:entries="@array/zone3_array"
+        android:popupBackground="@color/colorZone3"
+        android:text="@string/zone3_button"
+        app:layout_constraintBottom_toTopOf="@+id/zone4_spinner"
+        app:layout_constraintEnd_toStartOf="@+id/imageView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/zone2_spinner" />
 
-            <Spinner
-                android:id="@+id/spinner"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/colorZone1"
-                android:entries="@color/colorZone2"
-                tools:layout_editor_absoluteX="0dp"
-                tools:layout_editor_absoluteY="294dp" />
+    <Spinner
+        android:id="@+id/zone2_spinner"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        android:background="@color/colorZone2"
+        android:entries="@array/zone2_array"
+        android:popupBackground="@color/colorZone2"
+        android:text="@string/zone2_button"
+        app:layout_constraintBottom_toTopOf="@+id/zone3_spinner"
+        app:layout_constraintEnd_toStartOf="@+id/imageView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/zone1_spinner" />
 
-            <Button
-                android:id="@+id/zone1_btn"
-                style="@style/Widget.AppCompat.Button.Colored"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/colorZone1"
-                android:text="@string/zone1_button"
-                android:textAppearance="@style/TextAppearance.AppCompat.Button" />
+    <Spinner
+        android:id="@+id/zone4_spinner"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        android:background="@color/colorZone4"
+        android:entries="@array/zone4_array"
+        android:popupBackground="@color/colorZone4"
+        android:text="@string/zone4_button"
+        app:layout_constraintBottom_toTopOf="@+id/zone5_spinner"
+        app:layout_constraintEnd_toStartOf="@+id/imageView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/zone3_spinner" />
 
-            <Button
-                android:id="@+id/zone2_btn"
-                style="@style/Widget.AppCompat.Button.Colored"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/colorZone2"
-                android:text="@string/zone2_button"
-                android:textAppearance="@style/TextAppearance.AppCompat.Button" />
-
-            <Button
-                android:id="@+id/zone3_btn"
-                style="@style/Widget.AppCompat.Button.Colored"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/colorZone3"
-                android:text="@string/zone3_button"
-                android:textAppearance="@style/TextAppearance.AppCompat.Button" />
-
-            <Button
-                android:id="@+id/zone4_btn"
-                style="@style/Widget.AppCompat.Button.Colored"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/colorZone4"
-                android:backgroundTint="@color/colorZone4"
-                android:text="@string/zone4_button"
-                android:textAppearance="@style/TextAppearance.AppCompat.Button" />
-
-            <Button
-                android:id="@+id/zone5_btn"
-                style="@style/Widget.AppCompat.Button.Colored"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/colorZone5"
-                android:text="@string/zone5_button"
-                android:textAppearance="@style/TextAppearance.AppCompat.Button" />
-
-            <Button
-                android:id="@+id/zone6_btn"
-                style="@style/Widget.AppCompat.Button.Colored"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/colorZone6"
-                android:text="@string/zone6_button"
-                tools:layout_editor_absoluteX="2dp"
-                tools:layout_editor_absoluteY="0dp" />
-        </LinearLayout>
-    </ScrollView>
+    <Spinner
+        android:id="@+id/zone5_spinner"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/colorZone5"
+        android:entries="@array/zone5_array"
+        android:popupBackground="@color/colorZone5"
+        android:text="@string/zone5_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imageView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/zone4_spinner" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="0dp"
+        android:layout_width="286dp"
         android:layout_height="0dp"
+        android:background="@color/mainBackground"
         android:contentDescription="@string/contentDescription"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/zone_btn_scrollView"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@mipmap/nau_park_map" />
