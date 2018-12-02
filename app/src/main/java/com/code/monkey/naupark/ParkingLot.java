@@ -75,4 +75,24 @@ abstract public class ParkingLot
         address = newAddress;
     }
 
+    @Override
+    public boolean equals( Object other )
+    {
+        ParkingLot otherLot = null;
+        // same address?
+        if( other == this )
+        {
+            return true;
+        }
+
+        otherLot = (ParkingLot) other;
+        return this.address.equals( otherLot.address )
+                  && this.mode.equals( otherLot.mode )
+                    && this.name.equals( otherLot.name );
+    }
+
+    public String getName()
+    {
+        return this.name;
+    }
 }
