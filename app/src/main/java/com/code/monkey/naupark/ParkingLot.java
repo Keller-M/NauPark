@@ -32,8 +32,9 @@ abstract public class ParkingLot
      **/
     public ParkingLot( ArrayList<ParkingMode> mode, String name )
     {
-        this.mode = mode;
-        this.name = name;
+        this.mode    = mode;
+        this.name    = name;
+        this.address = null;
     }
 
     public ParkingLot(  ArrayList<ParkingMode> mode, String name, String address )
@@ -49,8 +50,9 @@ abstract public class ParkingLot
      */
     public ParkingLot()
     {
-        this.mode = new ArrayList<ParkingMode>();
-        this.name = null;
+        this.mode    = new ArrayList<ParkingMode>();
+        this.name    = null;
+        this.address = null;
     }
 
     /**
