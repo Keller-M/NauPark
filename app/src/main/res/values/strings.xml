@@ -6,7 +6,12 @@
     <string name="zone3_button">Zone 3</string>
     <string name="zone4_button">Zone 4</string>
     <string name="zone5_button">Zone 5</string>
-    <string name="zone6_button">Zone 6</string>
+    <string name="checklot_button">Open Lot</string>
+    <string name="report_button">Report Availability</string>
+    <string name="favorite_button">Favorite</string>
+    <string name="full_button">Full</string>
+    <string name="some_button">Moderate</string>
+    <string name="empty_button">Many spots</string>
 
     <string-array name="zone1_array">
         <item>Zone 1</item>
@@ -17,7 +22,6 @@
         <item>P3</item>
         <item>P3B</item>
         <item>P4</item>
-        <item>P5</item>
         <item>P5</item>
         <item>P6</item>
         <item>P9</item>

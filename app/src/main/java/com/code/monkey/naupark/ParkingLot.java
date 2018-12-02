@@ -93,4 +93,8 @@ abstract public class ParkingLot
                     && this.name.equals( otherLot.name );
     }
 
+    public String getName()
+    {
+        return this.name;
+    }
 }
