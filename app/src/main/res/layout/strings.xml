@@ -1,0 +1,96 @@
+<resources>
+    <string name="app_name">NauPark</string>
+    <string name="contentDescription">Map of the NAU campus and its parking spots</string>
+    <string name="zone1_button">Zone 1</string>
+    <string name="zone2_button">Zone 2</string>
+    <string name="zone3_button">Zone 3</string>
+    <string name="zone4_button">Zone 4</string>
+    <string name="zone5_button">Zone 5</string>
+    <string name="checklot_button">Open Lot</string>
+    <string name="find_parking_button">Find\nParking</string>
+    <string name="report_button">Report Availability</string>
+    <string name="favorite_button">Favorite</string>
+    <string name="full_button">Full</string>
+    <string name="some_button">Moderate</string>
+    <string name="empty_button">Many spots</string>
+
+    <string-array name="zone1_array">
+        <item>Zone 1</item>
+        <item>P1A</item>
+        <item>P1B</item>
+        <item>P2</item>
+        <item>P2B</item>
+        <item>P3</item>
+        <item>P3B</item>
+        <item>P4</item>
+        <item>P5</item>
+        <item>P6</item>
+        <item>P9</item>
+        <item>P10</item>
+        <item>P11</item>
+        <item>P12</item>
+    </string-array>
+
+    <string-array name="zone2_array">
+        <item>Zone 2</item>
+        <item>P7</item>
+        <item>P7A</item>
+        <item>P8</item>
+        <item>P13</item>
+        <item>P13A</item>
+        <item>P13D</item>
+        <item>P19</item>
+        <item>P16</item>
+        <item>P16A</item>
+        <item>P28D</item>
+        <item>P96C</item>
+    </string-array>
+
+    <string-array name="zone3_array">
+        <item>Zone 3</item>
+        <item>P29</item>
+        <item>P31</item>
+        <item>P32</item>
+        <item>P32A</item>
+        <item>P32B</item>
+        <item>P32C</item>
+        <item>P33</item>
+        <item>P38</item>
+        <item>P39</item>
+        <item>P96A</item>
+        <item>P96B</item>
+        <item>P96G</item>
+    </string-array>
+
+    <string-array name="zone4_array">
+        <item>Zone 4</item>
+        <item>P41</item>
+        <item>P44</item>
+        <item>P63</item>
+        <item>P64</item>
+        <item>P66</item>
+        <item>P66A</item>
+        <item>P68</item>
+    </string-array>
+
+    <string-array name="zone5_array">
+        <item>Zone 5</item>
+        <item>P42</item>
+        <item>P45</item>
+        <item>P45A</item>
+        <item>P45B</item>
+        <item>P46</item>
+        <item>P47</item>
+        <item>P50</item>
+        <item>P51</item>
+        <item>P52</item>
+        <item>P53</item>
+        <item>P54</item>
+        <item>P60</item>
+        <item>P61</item>
+        <item>P62</item>
+        <item>P62A</item>
+        <item>P62B</item>
+    </string-array>
+
+</resources>
