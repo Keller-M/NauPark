@@ -34,7 +34,7 @@ abstract public class ParkingLot
     {
         this.mode    = mode;
         this.name    = name;
-        this.address = null;
+        this.address = "";
     }
 
     public ParkingLot(  ArrayList<ParkingMode> mode, String name, String address )
@@ -51,8 +51,8 @@ abstract public class ParkingLot
     public ParkingLot()
     {
         this.mode    = new ArrayList<ParkingMode>();
-        this.name    = null;
-        this.address = null;
+        this.name    = "";
+        this.address = "";
     }
 
     /**
@@ -75,6 +75,22 @@ abstract public class ParkingLot
     public void setAddress( String newAddress )
     {
         address = newAddress;
+    }
+
+    @Override
+    public boolean equals( Object other )
+    {
+        ParkingLot otherLot = null;
+        // same address?
+        if( other == this )
+        {
+            return true;
+        }
+
+        otherLot = (ParkingLot) other;
+        return this.address.equals( otherLot.address ) &&
+                this.mode.equals( otherLot.mode ) &&
+                  this.name.equals( otherLot.name );
     }
 
 }
