@@ -1,4 +1,6 @@
 package com.code.monkey.naupark;
 
-public class DatabaseConnection {
+public class DatabaseConnection
+{
+
 }
