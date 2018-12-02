@@ -88,9 +88,9 @@ abstract public class ParkingLot
         }
 
         otherLot = (ParkingLot) other;
-        return this.address.equals( otherLot.address ) &&
-                this.mode.equals( otherLot.mode ) &&
-                  this.name.equals( otherLot.name );
+        return this.address.equals( otherLot.address )
+                  && this.mode.equals( otherLot.mode )
+                    && this.name.equals( otherLot.name );
     }
 
 }
