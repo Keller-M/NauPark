@@ -14,6 +14,10 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.sql.*;
+import java.util.Calendar;
+
+
 public class Navigation extends AppCompatActivity
 {
     String myLot;
@@ -108,7 +112,7 @@ public class Navigation extends AppCompatActivity
      */
     private void setAvailability()
     {
-
+        
     }
 
     /**
@@ -119,5 +123,72 @@ public class Navigation extends AppCompatActivity
     {
         return 1;
     }
+    public boolean attemptPark(ParkingLot lot, User user, int day, int hours, int minutes)
+    {
+        String lotName = lot.getName();
 
+        String parkingPass = user.getParkingPass();
+
+        String query = "SELECT business_hours, after_hours, weekend_hours " +
+                       "FROM lot WHERE " + lotName + "EQUALS lot_id AND " +
+                        parkingPass + "EQUALS pass_id";
+
+
+        ResultSet rs = null;
+        MySQLConnection conn = new MySQLConnection();
+
+        rs = conn.updateDatabase( query );
+
+        try {
+            boolean businessHours = rs.getBoolean( 1 );
+            boolean afterHours    = rs.getBoolean(2);
+            boolean weekendHours  = rs.getBoolean( 3 );
+
+            if ( ( day == Calendar.SUNDAY ||
+                    day == Calendar.SATURDAY ) &&
+                    weekendHours )
+            {
+                return true;
+            }
+
+            if( afterHours && hours >= 16 && minutes >= 30 )
+            {
+               return true;
+            }
+
+            if( businessHours && !(( hours <= 7 && minutes <= 30) ||
+                      (hours >= 16  && minutes >= 30)))
+            {
+                return true;
+            }
+
+        }
+        catch( Exception e )
+        {
+
+        }
+        return false;
+    }
+
+
+    /**
+     * Attempts to park in lot, calculates the current day of the week
+     * and time of day.
+     * @param lot Lot to attempt to park in.
+     * @return boolean true/false if user can park now
+     */
+    public boolean attemptParkNow( ParkingLot lot, User user )
+    {
+        int hours   = 0;
+        int minutes = 0;
+        int day     = 0;
+
+        Calendar calendar = Calendar.getInstance();
+
+        hours   = calendar.get( Calendar.HOUR );
+        minutes = calendar.get( Calendar.MINUTE );
+        day     = calendar.get( Calendar.DAY_OF_WEEK );
+
+        return attemptPark( lot, user, day, hours, minutes );
+    }
 }
