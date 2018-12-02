@@ -9,7 +9,7 @@ public class MySQLConnection {
     public MySQLConnection() {
         userName = "root";
         password = "root";
-        dbName = "//localhost:3306";
+        dbName = "//localhost:3306/Park";
     }
 
 
