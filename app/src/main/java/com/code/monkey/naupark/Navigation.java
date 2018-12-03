@@ -21,8 +21,9 @@ import java.util.TimeZone;
 
 public class Navigation extends AppCompatActivity
 {
-    String myLot;
+    String myLot,myAvail;
     ParkingAvailability avail = new ParkingAvailability();
+    ParkingLot lot = new ParkingLot();
 
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -46,6 +47,7 @@ public class Navigation extends AppCompatActivity
         configureFullButton();
         configureModerateButton();
         configureEmptyButton();
+        getAvailabilityTime(lot);
         setLot();
     }
 
@@ -60,7 +62,6 @@ public class Navigation extends AppCompatActivity
             {
                 if(checkLocation())
                 {
-                    ParkingLot lot = new ParkingLot();
                     lot.setName(myLot);
                     setAvailability( lot, avail); //need listener for lot level
                     //Toast.makeText(getBaseContext(), "Availability reported", Toast.LENGTH_LONG).show();
@@ -173,7 +174,7 @@ public class Navigation extends AppCompatActivity
                         "VALUES (" + timestamp + "," + time + ")";
         */
 
-        String query = "INSERT INTO availability(lot_id, timestamp, time) VALUES (test, 0.23, teststringyay)";
+        String query = "INSERT INTO availability VALUES (test, 0.23, Full, theDate);";
         MySQLConnection conn = new MySQLConnection();
 
         ResultSet rs = conn.updateDatabase( query );
@@ -184,16 +185,51 @@ public class Navigation extends AppCompatActivity
             Toast.makeText(getBaseContext(), "Connection Failed", Toast.LENGTH_LONG).show();
         }
 
+
     }
 
     /**
      *
      * @return the availability score of the specified lot
      */
-    private int getAvailability()
+    private void getAvailabilityTime(ParkingLot lot)
     {
-        return 1;
+        String lotName = lot.getName();
+
+        String query = "SELECT time, status FROM availability WHERE lot_id EQUALS " + lotName + ";";
+        MySQLConnection conn = new MySQLConnection();
+
+        ResultSet rs = conn.updateDatabase( query );
+        Toast.makeText(getBaseContext(), "Connection ", Toast.LENGTH_LONG).show();
+
+        if( rs == null )
+        {
+            Toast.makeText(getBaseContext(), "Connection Failed", Toast.LENGTH_LONG).show();
+        }
+
+        String resultString = "";
+        int resultInt = 0;
+        try
+        {
+            resultString = rs.getString(1);
+            resultInt = rs.getInt(2);
+
+        }
+        catch(Exception e)
+        {
+
+        }
+
+        ParkingAvailability avail = new ParkingAvailability();
+        avail.setAvailability(resultInt);
+
+        TextView availThing = (TextView) findViewById(R.id.textView4);
+        availThing.setText("" + avail.getString() + ":" + resultString);
+
     }
+
+
+
     public boolean attemptPark(ParkingLot lot, User user, int day, int hours, int minutes)
     {
         String lotName = lot.getName();

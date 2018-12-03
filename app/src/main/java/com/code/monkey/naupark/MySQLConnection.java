@@ -1,4 +1,5 @@
 package com.code.monkey.naupark;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
 import java.sql.*;
@@ -19,17 +20,17 @@ public class MySQLConnection {
         Statement statement = null;
         ResultSet resultSet = null;
         Connection con      = null;
+
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/park",
+            con = DriverManager.getConnection("jdbc:mysql://10.18.164.25:3306/park",
                                                   "root",
-                                                  ""
+                                                  "root"
             );
 
             statement = con.createStatement();
             resultSet = statement.executeQuery( query );
         } catch (Exception e) {
-
             return null;
         }
         return resultSet;
