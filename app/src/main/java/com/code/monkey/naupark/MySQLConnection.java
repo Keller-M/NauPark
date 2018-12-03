@@ -1,6 +1,7 @@
 package com.code.monkey.naupark;
-import java.sql.*;
+import android.widget.Toast;
 
+import java.sql.*;
 public class MySQLConnection {
     String userName;
     String password;
@@ -8,8 +9,8 @@ public class MySQLConnection {
 
     public MySQLConnection() {
         this.userName = "root";
-        this.password = "root";
-        dbName = "//localhost:3306/Park";
+        this.password = "";
+        dbName = "//localhost:3306/park";
     }
 
 
@@ -19,14 +20,16 @@ public class MySQLConnection {
         ResultSet resultSet = null;
         Connection con      = null;
         try {
-            con = DriverManager.getConnection("jdbc::mysql" + dbName,
-                                                  userName,
-                                                  password
-
+            Class.forName("com.mysql.jdbc.Driver");
+            con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/park",
+                                                  "root",
+                                                  ""
             );
+
             statement = con.createStatement();
             resultSet = statement.executeQuery( query );
         } catch (Exception e) {
+
             return null;
         }
         return resultSet;

@@ -22,7 +22,7 @@ import java.util.TimeZone;
 public class Navigation extends AppCompatActivity
 {
     String myLot;
-
+    ParkingAvailability avail = new ParkingAvailability();
 
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -43,6 +43,9 @@ public class Navigation extends AppCompatActivity
         myLot                  = new String(inputIntent.getStringExtra("chosenLot"));
 
         configureReportButton();
+        configureFullButton();
+        configureModerateButton();
+        configureEmptyButton();
         setLot();
     }
 
@@ -57,11 +60,10 @@ public class Navigation extends AppCompatActivity
             {
                 if(checkLocation())
                 {
-                    ParkingAvailability avail = new ParkingAvailability();
                     ParkingLot lot = new ParkingLot();
                     lot.setName(myLot);
                     setAvailability( lot, avail); //need listener for lot level
-                    Toast.makeText(getBaseContext(), "Availability reported", Toast.LENGTH_LONG).show();
+                    //Toast.makeText(getBaseContext(), "Availability reported", Toast.LENGTH_LONG).show();
                     startActivity(new Intent(Navigation.this, MainActivity.class));
                     finish();
                 }
@@ -70,6 +72,48 @@ public class Navigation extends AppCompatActivity
 
                     Toast.makeText(getBaseContext(), "Get closer to report availability", Toast.LENGTH_LONG).show();
                 }
+            }
+        });
+    }
+
+    private void configureFullButton()
+    {
+
+        Button reportButton = findViewById(R.id.full_button);
+
+        reportButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view)
+            {
+                avail.setAvailability(0);
+            }
+        });
+    }
+
+    private void configureModerateButton()
+    {
+
+        Button reportButton = findViewById(R.id.some_button);
+
+        reportButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view)
+            {
+                avail.setAvailability(1);
+            }
+        });
+    }
+
+    private void configureEmptyButton()
+    {
+
+        Button reportButton = findViewById(R.id.lots_button);
+
+        reportButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view)
+            {
+                avail.setAvailability(2);
             }
         });
     }
@@ -122,15 +166,18 @@ public class Navigation extends AppCompatActivity
         String time = "" + calendar.get( Calendar.DAY_OF_WEEK ) + '.' +
                       calendar.get( Calendar.HOUR ) + '.' +
                       calendar.get( Calendar.MINUTE );
-
-        String query =  "INSERT INTO availability (timestamp, time)" +
+        /*
+        String query =  "UPDATE availability SET timestamp = " + timestamp + ", time = " + time +
                         "WHERE lot_id EQUALS" + lotName + " AND timestamp EQUALS (SELECT MIN(timestamp) " +
                         "FROM availability WHERE lot_id EQUALS " + lotName + ") " +
                         "VALUES (" + timestamp + "," + time + ")";
+        */
 
+        String query = "INSERT INTO availability(lot_id, timestamp, time) VALUES (test, 0.23, teststringyay)";
         MySQLConnection conn = new MySQLConnection();
 
         ResultSet rs = conn.updateDatabase( query );
+        Toast.makeText(getBaseContext(), "Connection ", Toast.LENGTH_LONG).show();
 
         if( rs == null )
         {
