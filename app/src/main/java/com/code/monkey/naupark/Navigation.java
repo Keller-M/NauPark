@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import java.sql.*;
 import java.util.Calendar;
+import java.util.TimeZone;
 
 
 public class Navigation extends AppCompatActivity
@@ -56,7 +57,10 @@ public class Navigation extends AppCompatActivity
             {
                 if(checkLocation())
                 {
-                    setAvailability();
+                    ParkingAvailability avail = new ParkingAvailability();
+                    ParkingLot lot = new ParkingLot();
+                    lot.setName(myLot);
+                    setAvailability( lot, avail); //need listener for lot level
                     Toast.makeText(getBaseContext(), "Availability reported", Toast.LENGTH_LONG).show();
                     startActivity(new Intent(Navigation.this, MainActivity.class));
                     finish();
@@ -110,9 +114,29 @@ public class Navigation extends AppCompatActivity
     /**
      *
      */
-    private void setAvailability()
+    private void setAvailability( ParkingLot lot, ParkingAvailability avail  )
     {
-        
+        Calendar calendar = Calendar.getInstance();
+        String lotName = lot.getName();
+        double timestamp = Calendar.getInstance(TimeZone.getTimeZone("UTC")).getTimeInMillis();
+        String time = "" + calendar.get( Calendar.DAY_OF_WEEK ) + '.' +
+                      calendar.get( Calendar.HOUR ) + '.' +
+                      calendar.get( Calendar.MINUTE );
+
+        String query =  "INSERT INTO availability (timestamp, time)" +
+                        "WHERE lot_id EQUALS" + lotName + " AND timestamp EQUALS (SELECT MIN(timestamp) " +
+                        "FROM availability WHERE lot_id EQUALS " + lotName + ") " +
+                        "VALUES (" + timestamp + "," + time + ")";
+
+        MySQLConnection conn = new MySQLConnection();
+
+        ResultSet rs = conn.updateDatabase( query );
+
+        if( rs == null )
+        {
+            Toast.makeText(getBaseContext(), "Connection Failed", Toast.LENGTH_LONG).show();
+        }
+
     }
 
     /**
