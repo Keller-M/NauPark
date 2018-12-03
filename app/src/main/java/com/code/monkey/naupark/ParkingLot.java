@@ -8,7 +8,7 @@ import java.util.ArrayList;
  * available.
  * e.g. after 4:30PM on weekdays, or at any time during the weekends.
  */
-abstract public class ParkingLot
+public class ParkingLot
 {
     enum ParkingMode
     {
@@ -43,6 +43,11 @@ abstract public class ParkingLot
         this.name    = name;
         this.address = address;
 
+    }
+
+    public void setName( String newName )
+    {
+        this.name = newName;
     }
 
     /**
