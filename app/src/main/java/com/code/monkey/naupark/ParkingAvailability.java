@@ -12,7 +12,7 @@ public class ParkingAvailability
     {
         this.availability = AVAILABILITY_EMPTY;
     }
-    
+
     public void setAvailability( int level )
     {
         this.availability = level;
