@@ -6,9 +6,9 @@ public class MySQLConnection {
     String password;
     String dbName;
 
-    public MySQLConnection( String userName, String password ) {
-        this.userName = userName;
-        this.password = password;
+    public MySQLConnection() {
+        this.userName = "root";
+        this.password = "root";
         dbName = "//localhost:3306/Park";
     }
 
